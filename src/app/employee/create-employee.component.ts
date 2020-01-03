@@ -42,39 +42,8 @@ export class CreateEmployeeComponent implements OnInit {
       // tslint:disable-next-line: object-literal-key-quotes
       'required': 'Phone is required.',
     },
-    // tslint:disable-next-line: object-literal-key-quotes
-    'skillName': {
-      // tslint:disable-next-line: object-literal-key-quotes
-      'required': 'Skill Name is required',
-    },
-    // tslint:disable-next-line: object-literal-key-quotes
-    'experienceInYears': {
-      // tslint:disable-next-line: object-literal-key-quotes
-      'required': 'Experience is required',
-    },
-    // tslint:disable-next-line: object-literal-key-quotes
-    'proficiency': {
-      // tslint:disable-next-line: object-literal-key-quotes
-      'required': 'Proficiency is required',
-    },
   };
   formErrors = {
-    // tslint:disable-next-line: object-literal-key-quotes
-    'fullName': '',
-    // tslint:disable-next-line: object-literal-key-quotes
-    'email': '',
-    // tslint:disable-next-line: object-literal-key-quotes
-    'confirmEmail': '',
-    // tslint:disable-next-line: object-literal-key-quotes
-    'emailGroup': '',
-    // tslint:disable-next-line: object-literal-key-quotes
-    'phone': '',
-    // tslint:disable-next-line: object-literal-key-quotes
-    'skillName': '',
-    // tslint:disable-next-line: object-literal-key-quotes
-    'experienceInYears': '',
-    // tslint:disable-next-line: object-literal-key-quotes
-    'proficiency': ''
   };
 
   constructor(private formBuilder: FormBuilder) { }
@@ -102,6 +71,10 @@ export class CreateEmployeeComponent implements OnInit {
       this.onContactPreferenceChange(data);
     });
 
+  }
+
+  addSkillButtonClick(): void {
+    (this.employeeForm.get('skills') as FormArray).push(this.addSkillFormGroup());
   }
 
   addSkillFormGroup(): FormGroup {
@@ -145,13 +118,14 @@ export class CreateEmployeeComponent implements OnInit {
         this.logValidationErrors(abstractControl);
       }
 
-      if (abstractControl instanceof FormArray) {
-        for (const control of abstractControl.controls) {
-          if (control instanceof FormGroup) {
-            this.logValidationErrors(control);
-          }
-        }
-      }
+      // This code is commented as the validation for the form array is in the view template itself. 
+      // if (abstractControl instanceof FormArray) {
+      //   for (const control of abstractControl.controls) {
+      //     if (control instanceof FormGroup) {
+      //       this.logValidationErrors(control);
+      //     }
+      //   }
+      // }
     });
   }
 

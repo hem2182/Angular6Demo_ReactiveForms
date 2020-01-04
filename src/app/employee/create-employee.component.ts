@@ -84,6 +84,10 @@ export class CreateEmployeeComponent implements OnInit {
       proficiency: ['', [Validators.required]]
     });
   }
+
+  removeSkillButtonClick(skillGroupIndex: number): void {
+    (this.employeeForm.get('skills') as FormArray).removeAt(skillGroupIndex);
+  }
   onContactPreferenceChange(selectedValue: string): void {
     const phoneControl = this.employeeForm.get('phone');
     if (selectedValue === 'phone') {

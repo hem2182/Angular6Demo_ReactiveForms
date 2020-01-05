@@ -1,0 +1,47 @@
+{
+    "employees": [
+        {
+            "id": 1,
+            "fullName": "Mark",
+            "contactPreference": "email",
+            "email": "mark@saxobank.com",
+            "phone": "9877867756",
+            "skills": [
+                {
+                    "skillName": "C#",
+                    "experienceInYears": 1,
+                    "proficiency": "beginner"
+                },
+                {
+                    "skillName": "Java",
+                    "experienceInYears": 2,
+                    "proficiency": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "fullName": "Mary",
+            "contactPreference": "email",
+            "email": "mary@saxobank.com",
+            "phone": "8765776890",
+            "skills": [
+                {
+                    "skillName": "Angular",
+                    "experienceInYears": 2,
+                    "proficiency": "beginner"
+                },
+                {
+                    "skillName": "HTML",
+                    "experienceInYears": 2,
+                    "proficiency": "intermediate"
+                },
+                {
+                    "skillName": "LINQ",
+                    "experienceInYears": 3,
+                    "proficiency": "advanced"
+                }
+            ]
+        }
+    ]
+}

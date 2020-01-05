@@ -122,7 +122,7 @@ export class CreateEmployeeComponent implements OnInit {
         this.logValidationErrors(abstractControl);
       }
 
-      // This code is commented as the validation for the form array is in the view template itself. 
+      // This code is commented as the validation for the form array is in the view template itself.
       // if (abstractControl instanceof FormArray) {
       //   for (const control of abstractControl.controls) {
       //     if (control instanceof FormGroup) {
